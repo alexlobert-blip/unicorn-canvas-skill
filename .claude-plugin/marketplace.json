@@ -1,0 +1,16 @@
+{
+  "name": "unicorn-canvas-skill",
+  "description": "Sharebird marketplace — Unicorn Messaging Framework canvas skill for PMMs working on positioning.",
+  "owner": {
+    "name": "Sharebird",
+    "email": "hello@sharebird.com",
+    "url": "https://sharebird.com"
+  },
+  "plugins": [
+    {
+      "name": "sharebird-unicorn-canvas",
+      "source": ".",
+      "description": "Walks a PMM through Chris Hines's Unicorn Messaging Framework canvas — blank or critique mode. Produces a populated XLSX plus a Markdown critique."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Build outputs
+dist/
+*.zip
+*.plugin
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

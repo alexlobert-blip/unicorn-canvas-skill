@@ -1,0 +1,38 @@
+{
+  "brand_line": "We make sure your data is discoverable, governed, and out of the wrong hands — wherever it lives.",
+  "pains": [
+    {
+      "eyebrow": "PAIN 1 · DOMINANT",
+      "title": "AI is pulling sensitive data into models faster than security can see it."
+    },
+    {
+      "eyebrow": "PAIN 2",
+      "title": "Access governance is broken across hundreds of SaaS apps."
+    },
+    {
+      "eyebrow": "PAIN 3",
+      "title": "DLP rollups are failing the audit in regulated industries."
+    }
+  ],
+  "differentiation": [
+    "Catches sensitive data flowing into AI models in minutes, not weeks — across every cloud and SaaS app.",
+    "Auto-revokes stale and over-provisioned access without breaking the workflows people actually use.",
+    "Generates audit-ready DLP rollups by control family, not by tool — so auditors stop asking the same question twice."
+  ],
+  "outcomes": [
+    "Cut sensitive-data exposure investigations from 14 days to 90 minutes at a Fortune-100 retailer.",
+    "Removed 41% of over-provisioned SaaS access in the first 60 days at a global insurer.",
+    "Reduced audit prep from 6 weeks to 4 days at a regional bank."
+  ],
+  "modules": [
+    ["AI Data Discovery", "Model Exposure Map", "Sensitive-Data Lineage"],
+    ["Access Reviews", "Identity Posture", "Stale-Access Auto-Revoke"],
+    ["DLP Posture Manager", "Control-Family Rollup", "Audit Export Pack"]
+  ],
+  "power_plays": [
+    "Target large enterprises moving genAI to production; trigger on a public AI policy announcement; lead with the AI Data Discovery 30-day exposure scan; aim for a CISO + CDO joint pilot meeting.",
+    "Target enterprises with 200+ SaaS apps; trigger on a Workday or Okta consolidation project; lead with the access-review ROI calculator; aim for a SaaS access audit workshop.",
+    "Target regulated industries (financial services, healthcare, utilities); trigger on a regulator finding or a new control-family mandate; lead with the audit-rollup before/after walkthrough; aim for a quarterly compliance review."
+  ],
+  "output_path": "~/Downloads/unicorn-canvas-cyera-example.xlsx"
+}
