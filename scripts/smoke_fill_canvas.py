@@ -57,6 +57,16 @@ SAMPLE_PAYLOAD = {
 
 
 def main() -> int:
+    try:
+        import openpyxl  # noqa: F401
+    except ImportError:
+        print(
+            "SKIP — openpyxl not installed in the active Python. "
+            "Install with `pip install openpyxl` to run this smoke test.",
+            file=sys.stderr,
+        )
+        return 0
+
     if not FILL_SCRIPT.exists():
         print(f"Missing fill script: {FILL_SCRIPT}", file=sys.stderr)
         return 1

@@ -31,26 +31,42 @@ Ask two things in one turn, terse answers fine:
 
 The canvas is one source of truth — write it once, in neutral surface-durable language (the brand-line pressure-test enforces this: "works at a sales kickoff AND on a website hero"). Different downstream surfaces (exec memo, sales deck, website hero) are translations FROM the canvas, handled in Output Step 6's recommended-next-actions — not different versions OF the canvas.
 
-## Step 3 — Inputs Check
+## Step 3 — Inputs Check (auto-ingest, then confirm + add more)
 
-Ask what evidence the user has, then **actively request the 2 highest-leverage artifacts.**
+The skill auto-detects likely transcript / prep-doc files in the working folder and offers to ingest them. The user can add more paths, URLs, or pasted excerpts.
 
-> Quick inputs check — what evidence do you have to anchor this canvas?
+**Path A — auto-detect mode (preferred):** Run `scripts/ingest_inputs.py --working-folder <path>` on the conversation's working folder. The script scans for `.md`, `.txt`, `.docx`, `.pdf`, `.vtt` files (skipping noise like `.DS_Store` and `.xlsx` templates). It returns a JSON payload with `sources` (per-file metadata) and `concatenated_text` (the full content for context). Present what was found:
+
+> I found these files in your working folder — should I ingest all of them?
+> - [filename] · [source_type] · [chars]
+> - [filename] · [source_type] · [chars]
+>
+> Anything to add — additional file paths, Google Doc / Sheet URLs, or pasted excerpts I should include?
+
+If the user adds paths or URLs, re-run with `--path` / `--url` flags. Confirm: *"Ingested N sources, ~M chars. I'll quote from them at each layer."*
+
+**Path B — no auto-detect (Cowork without working folder access, or no files found):** Ask the user directly:
+
+> Quick inputs check — what evidence do you have? Paste the most useful (or share file paths / Google Doc URLs):
 > - Customer interview transcripts or win/loss notes (highest leverage)
 > - Customer outcome data with named references (critical for Outcomes layer)
 > - Competitive research / analyst reports (important for Differentiation)
 > - Sales objection logs (useful for power-play triggers)
-> - Existing messaging docs, narrative drafts, sales decks (useful for Brand line + as critique baseline)
->
-> List what you have (or "nothing yet" — that's valid).
+> - Existing messaging docs, narrative drafts, sales decks (useful for Brand line)
 
-After they answer, name the top 2 and ask for them: *"Of what you listed, the most useful right now are [type 1] and [type 2]. Paste the most relevant excerpts (or upload). I'll quote from them as we walk each layer."*
+Run `ingest_inputs.py` with the paths/URLs they provide. Or just take pasted excerpts directly into context.
 
-If "nothing yet": say plainly *"This canvas will be hypothesis-driven. We'll walk it through to a clean v0, but you'll need to validate against real customer conversations before scaling it across enablement, sales decks, or the website."* The first Recommended Next Action at Output time must be customer validation.
+**Path C — no inputs at all:** Say plainly *"This canvas will be hypothesis-driven. We'll walk it through to a clean v0, but you'll need to validate against real customer conversations before scaling it across enablement, sales decks, or the website."* The first Recommended Next Action at Output time must be customer validation.
+
+PDF extraction uses macOS-only `textutil`. Linux/Windows users hitting a PDF will see a warning in `warnings[]` and the source's text will be empty — fall back to asking for a `.docx` conversion or pasted excerpts.
 
 ## Step 4 — Layer-by-layer walkthrough (blank-canvas branch)
 
-For each layer: (1) ask the layer's **Grounding question** from the rubric, (2) ask for the user's answer, (3) pressure-test using the rubric, (4) when locked, move on.
+For each layer: (1) ask the layer's **Grounding question** from the rubric, (2) **if transcripts were ingested in Step 3, surface 2–3 relevant quotes** from `concatenated_text` for this layer ("Here's how your customers describe Pain 1 in your transcripts: [quote 1, source]; [quote 2, source]"), (3) ask the user to craft the cell in their own words, (4) pressure-test using the rubric, (5) when locked, move on.
+
+Suggest quotes only — do NOT draft cells for the user. The framework requires the user to do the thinking. Quotes raise the floor (customer language instead of internal pattern-matching); the user still owns the synthesis.
+
+If no transcripts were ingested, skip step (2) — go straight from grounding question to "what's the cell?"
 
 Layers, in order: **Brand line → Three pains → Differentiation (×3) → Outcomes (×3) → Modules (3 per pain = 9) → Power plays (×3).**
 

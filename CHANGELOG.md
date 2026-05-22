@@ -2,6 +2,24 @@
 
 All notable changes to this plugin will be documented here.
 
+## [0.3.0] - 2026-05-21
+
+### Added
+- **Automatic ingestion of customer transcripts / prep docs as upstream input** — the headline gap from v0.1–v0.2 that the user flagged as the difference between "useful" and "truly useful."
+  - **Three vendored scripts from `sharebird-launch-brief`** (`extract_artifact_text.py`, `fetch_google_doc.py`, `fetch_google_sheet.py`) — stdlib-only, byte-identical copies. Handle `.md`, `.txt`, `.docx`, `.pdf`, plus public Google Doc / Sheet URLs.
+  - **New `scripts/ingest_inputs.py`** — wrapper that auto-scans a working folder for likely transcript / prep-doc files, optionally takes additional `--path` / `--url` flags, runs the right extractor per source, and returns a single JSON payload with concatenated text + per-source metadata + warnings. Soft cap of 50,000 chars to keep context budget sane.
+  - **New `scripts/smoke_ingest_inputs.py`** — fixture-based smoke test exercising the auto-scan + concatenation flow.
+- **Per-layer quote pattern in SKILL.md Step 4.** At each layer's grounding question, if transcripts were ingested, the skill surfaces 2–3 relevant quotes ("Here's how your customers describe Pain 1: [quote]") before asking the user to craft the cell in their own words. Preserves the framework's "user does the thinking" principle — quotes only, no auto-fill.
+
+### Changed
+- **Step 3 (Inputs Check) rewritten** as a three-path flow: (A) auto-detect from the working folder, (B) ask user for explicit paths/URLs/excerpts if no working folder or nothing found, (C) hypothesis-driven if no inputs at all.
+- **README.md** — moved "Automatic ingestion of customer transcripts or prep docs as upstream input" from "What's out of v1" to "What's in." Added macOS-only PDF caveat under Requirements.
+
+### Known limitations
+- **PDF extraction is macOS-only** (uses `textutil`). Linux/Windows users hitting a PDF source see a warning and the source's text comes back empty. Workaround: convert PDF to `.docx` or paste excerpts directly. This is a deliberate regression in cross-platform parity to keep the install footprint stdlib-only; a future patch could swap in `pypdf` if user demand arrives.
+- **No auto-watching** — one-time scan at Step 3; if the user drops new files mid-conversation, they re-trigger ingestion explicitly.
+- **No OAuth Google Drive** — only public / shared-link Google Docs and Sheets are supported.
+
 ## [0.2.2] - 2026-05-21
 
 ### Fixed

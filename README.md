@@ -72,18 +72,21 @@ unicorn-canvas-skill/
 
 - Python 3 with `openpyxl` (only used to write the populated XLSX). Install with `pip install openpyxl`.
 
-## Scope (v1)
+## Scope
 
 What's in:
 - Blank-canvas and critique workflows for the Unicorn Messaging Framework canvas.
 - Per-layer pressure-test rubric covering the brand line, three pains, differentiation, outcomes, modules, and power plays.
 - XLSX output via bundled `templates/canvas-blank.xlsx` + `scripts/fill_canvas.py`.
+- **Automatic ingestion of customer transcripts and prep docs as upstream input** (v0.3.0+). Drop your evidence files into the working folder and the skill auto-detects, ingests, and surfaces relevant quotes at each canvas layer. Supports `.md`, `.txt`, `.docx`, `.pdf` (macOS), and public Google Docs / Sheets URLs. Skill stays Socratic — quotes only, no auto-fill.
 
-What's out of v1 (could land in future versions):
+What's out (could land in future versions):
 - HTML output (XLSX only).
-- Automatic ingestion of customer transcripts or prep docs as upstream input.
-- Per-industry rubric variants. v1 is industry-neutral with cybersecurity-flavored examples drawn from the Cyera worked example that originated the framework — substitute your own buyer / opponent / SKUs as you walk the layers.
+- Per-industry rubric variants. The current rubric is industry-neutral with cybersecurity-flavored examples drawn from the Cyera worked example that originated the framework — substitute your own buyer / opponent / SKUs as you walk the layers.
 - Power Play Table integration beyond the closing handoff line in the skill (a separate `sharebird-power-play-table` skill is planned).
+- Auto-watching the working folder for files dropped mid-conversation.
+- OAuth-gated Google Drive access (only public / shared-link Docs and Sheets supported today).
+- Cross-platform PDF extraction. `scripts/extract_artifact_text.py` uses macOS-only `textutil` for PDFs — Linux/Windows users hitting a PDF should convert to `.docx` first or paste excerpts.
 
 ## License
 
