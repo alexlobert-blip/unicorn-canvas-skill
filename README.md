@@ -16,28 +16,32 @@ The three modes cover the full PMM project lifecycle — learn the framework, pl
 
 ## Install
 
-### Option A — install from a Claude Code marketplace
+### Option A — download the latest release zip
 
-```
-/plugin marketplace add sharebird/unicorn-canvas-skill
-/plugin install sharebird-unicorn-canvas@unicorn-canvas-skill
-```
-
-### Option B — install from a local clone (for testing)
-
-```
-git clone https://github.com/sharebird/unicorn-canvas-skill.git
-/plugin marketplace add /absolute/path/to/unicorn-canvas-skill
-/plugin install sharebird-unicorn-canvas@unicorn-canvas-skill
+```bash
+curl -L -o sharebird-unicorn-canvas.zip \
+  https://github.com/alexlobert-blip/unicorn-canvas-skill/releases/latest/download/sharebird-unicorn-canvas-v0.4.0.zip
+unzip sharebird-unicorn-canvas.zip -d ~/sharebird-unicorn-canvas
 ```
 
-### Option C — drop the skill into `~/.claude/skills/`
+Then add the skill through your Claude client — Claude.app: Customize → Skills → `+` → point at the unzipped `skills/sharebird-unicorn-canvas/` directory.
 
-If you just want the skill (not the full plugin), symlink or copy the skill folder:
+### Option B — clone the repo and symlink
 
+For developers or if you want to track updates via `git pull`:
+
+```bash
+git clone https://github.com/alexlobert-blip/unicorn-canvas-skill.git
+cd unicorn-canvas-skill
+
+# Symlink into the Claude Code CLI skills directory:
+make install
+
+# Or build your own .zip for distribution:
+make plugin
 ```
-ln -s "$(pwd)/skills/sharebird-unicorn-canvas" ~/.claude/skills/sharebird-unicorn-canvas
-```
+
+`make install` creates `~/.claude/skills/sharebird-unicorn-canvas` as a symlink to the cloned repo, so the skill is discoverable by Claude Code CLI sessions. For Claude.app, point Customize → Skills → `+` at the cloned `skills/sharebird-unicorn-canvas/` directory.
 
 ## Use
 
