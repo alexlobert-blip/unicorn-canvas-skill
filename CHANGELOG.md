@@ -2,6 +2,45 @@
 
 All notable changes to this plugin will be documented here.
 
+## [0.4.0] - 2026-05-21
+
+### Added — three enterprise-grade modes
+
+Top-level Step 1 is now a mode picker. Three modes match where the user actually is in their project:
+
+- **Mode A — Information.** New. For PMMs (or teammates) who want to learn the framework before using it. Two sub-options: guided tour through the Cyera worked example, or open Q&A. Optional one-page reference card output for sharing with teammates.
+- **Mode B — Build a canvas.** Today's flow, augmented. Sub-option asks blank-canvas vs. critique-an-existing-draft (the old top-level Critique mode is now folded in here). Per-layer **readiness gate** added before each layer in Step 4: confirms the user has the evidence to fill the layer; if not, user picks (a) hypothesis with `[VALIDATE]`, (b) generate a research mini-plan for that layer inline, or (c) skip. Output flow unchanged.
+- **Mode C — Plan research.** New. For PMMs who want to use the canvas eventually but don't have the evidence yet. Walks per-layer inputs audit, generates a structured Markdown research plan saved to `~/Downloads/unicorn-canvas-research-plan-{slug}.md` with three sections: (1) per-layer readiness checklist, (2) research plan table (Layer / Gap / Research type / Question stems / Evidence target / Timeline), (3) per-research-type question packs (Customer call / Analyst / Field expert / Sales / CS). Question packs are formatted to drop directly into Sharebird's deep-dive prep doc — the skill becomes a companion to the deep-dive workflow.
+
+### Added — per-layer Readiness criterion in the Inline Rubric
+
+Each of the 6 rubric layers now has a fifth element alongside Job / Grounding question / Common mistake / Pressure-test questions: a **Readiness criterion** stating what evidence is required to fill the layer well. The Build-mode readiness gate (Step 4) checks against this criterion; the Plan-mode inputs audit (Step 3') maps directly to it.
+
+### Changed
+
+- **Step 1 — Mode Select** replaces the old top-level "blank vs critique" question. Critique is now a sub-option inside Build mode.
+- **README.md** — Scope section rewritten to describe all three modes.
+- **SKILL.md grew from 220 → 360 lines** (+64%). Significant. The lines earn their cost by tripling the skill's audience (learners + planners + builders, not just builders). Both reference benchmarks (`narrative-pressure-test` 147 LOC, `sharebird-launch-brief` 133 LOC) serve narrower use cases.
+
+### Preserved (no behavior change)
+
+- All 6 grounding questions (Brand line, Pains, Differentiation, Outcomes, Modules, Power plays).
+- All 5 pressure-test questions per layer (30 total — the skill's teeth).
+- All `[VALIDATE]` / `[BETA]` / `[ROADMAP]` / `[NEW MOTION]` markers.
+- Trigger surface (frontmatter description) — same trigger phrases, same eager priority.
+- v0.3.0's auto-ingestion in Step 3 (now part of Mode B).
+- v0.2.2's "canvas is one source of truth" stance.
+- Step 6 Output (XLSX + Markdown critique).
+- Bundled Python scripts unchanged (`fill_canvas.py`, `ingest_inputs.py`, the 3 vendored extractors).
+
+### Out of scope (could land in future versions)
+
+- Branching tour in Mode A ("which layer do you want to dig into?").
+- Cross-mode state persistence (start in Mode C, return weeks later, resume in Mode B with auto-loaded research plan).
+- Project-management features in Mode C (assignees, Linear/Jira tickets, calendar timelines).
+- Stakeholder mapping / sign-off workflows.
+- Quarterly canvas refresh as a 4th mode.
+
 ## [0.3.0] - 2026-05-21
 
 ### Added

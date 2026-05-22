@@ -6,10 +6,13 @@ The skill is one page, five layers (brand line → pains → differentiation →
 
 ## What you get
 
-- A hybrid workflow — the skill asks at the start whether you are starting from a blank canvas or critiquing an existing draft.
-- Layer-by-layer pressure-test using a medium-rigor rubric (push back on weak answers, never block).
-- A populated `.xlsx` saved to `~/Downloads/unicorn-canvas-{slug}.xlsx` once the canvas is done.
-- A Markdown critique in the conversation: strongest cells, weakest cells, three recommended next actions, handoff to the Power Play Table.
+Three modes, picked at skill open:
+
+1. **Information** — learn the framework. Guided tour through the Cyera worked example, or open Q&A about any layer. Optional one-page reference card to share with teammates. No canvas built.
+2. **Build a canvas** — synthesize a canvas from your evidence. Sub-option: blank canvas (fresh fill-in) or critique an existing draft. Per-layer readiness gate — if you lack evidence for a layer, the skill offers (a) `[VALIDATE]` + best hypothesis, (b) inline research mini-plan for that layer, or (c) skip. Auto-ingests transcripts and prep docs from your working folder; surfaces customer-voice quotes at each layer; produces a populated `.xlsx` at `~/Downloads/unicorn-canvas-{slug}.xlsx` plus a Markdown critique with strongest/weakest cells, three next actions, and a handoff to the Power Play Table.
+3. **Plan research** — generate a structured research plan + interview question packs to gather the evidence you need BEFORE building. Output: a Markdown plan at `~/Downloads/unicorn-canvas-research-plan-{slug}.md` with per-layer readiness checklist, research plan table (Layer / Gap / Research type / Question stems / Evidence target / Timeline), and per-research-type question packs (Customer call / Analyst / Field expert / Sales / CS) formatted to drop into Sharebird's deep-dive prep doc.
+
+The three modes cover the full PMM project lifecycle — learn the framework, plan the research, synthesize the canvas. A companion to deep-dive interview workflows: Mode C produces the question packs that feed deep-dives; Mode B consumes the transcripts that come out.
 
 ## Install
 
@@ -40,12 +43,13 @@ ln -s "$(pwd)/skills/sharebird-unicorn-canvas" ~/.claude/skills/sharebird-unicor
 
 Once installed, start a Claude Code conversation and say one of:
 
-- "I'm refreshing our messaging — can you help?"
-- "Pressure-test my Unicorn canvas"
-- "Walk me through the Unicorn Messaging Framework"
-- "Help me get to one brand line + three pains"
+- "Explain the Unicorn Messaging Framework canvas" → routes to **Mode A** (Information)
+- "Help me build a messaging canvas for [company]" → routes to **Mode B** (Build)
+- "Pressure-test my Unicorn canvas" → routes to **Mode B** with critique sub-option
+- "What research should I run to build a messaging canvas?" → routes to **Mode C** (Plan)
+- "I'm refreshing our messaging — can you help?" → routes to **Mode B** (default)
 
-Claude will invoke the skill and ask whether you want to start from a blank canvas or critique an existing draft.
+Claude will invoke the skill and confirm the mode if the opening prompt is ambiguous.
 
 ## What's inside
 
