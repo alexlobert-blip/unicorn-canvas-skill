@@ -1,7 +1,7 @@
 {
   "name": "sharebird-unicorn-canvas",
   "description": "Walks a PMM through Chris Hines's Unicorn Messaging Framework canvas end-to-end — either filling in a blank canvas or pressure-testing an existing draft. Produces a populated XLSX plus a Markdown critique. Triggers on phrases like 'help me build my messaging canvas', 'pressure-test my messaging canvas', 'messaging canvas', 'messaging framework', 'positioning canvas', 'unicorn canvas', and any work on positioning, refreshing messaging, launch narratives, customer pains, or a brand line.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "Sharebird",
     "email": "hello@sharebird.com"

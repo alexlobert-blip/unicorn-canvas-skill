@@ -61,15 +61,13 @@ Both paths run Steps 2–3 (Context + Inputs), then differ at Step 4.
 
 ### Step 2 — Context Check
 
-Ask two things in one turn:
+Ask one thing, wait:
 
-> Before we start, two quick things:
-> 1. **Company + product** in one line.
-> 2. **Target ICP** for this canvas — title, company size, vertical if relevant.
->
-> One ICP per canvas. Multiple ICPs = separate canvases; pain language doesn't generalize.
+> Before we start: **company + product** in one line.
 
-The canvas is one source of truth — written once, in neutral surface-durable language (the brand-line pressure-test enforces this). Different downstream surfaces (exec memo, sales deck, website hero) are translations FROM the canvas, handled at Output time — not different versions OF the canvas.
+That's the only canvas-level fact the skill needs up front. Buyer personas are captured per-pain in the Pains layer — most products serve multiple buyer types (a CISO feels Pain 1, a Compliance lead feels Pain 3), and the canvas accommodates that. The brand line still has to work across every persona the product serves (the brand-line pressure-test enforces this — *"works at a sales kickoff AND on a website hero"*).
+
+The canvas is one source of truth — written once, in neutral surface-durable language. Different downstream surfaces (exec memo, sales deck, website hero) are translations FROM the canvas, handled at Output time — not different versions OF the canvas.
 
 ### Step 3 — Inputs Check (auto-ingest, then confirm + add more)
 
@@ -100,7 +98,7 @@ For each layer in order — **Brand line → Three pains → Differentiation (×
    > Three options if not:
    > - (a) **Mark `[VALIDATE]` and fill with best hypothesis.** We'll come back later. Output will flag this for follow-up validation.
    > - (b) **Pause and generate a research mini-plan for this layer now.** I'll produce 2-3 question stems + target evidence type + timeline — you can run the research later and rebuild the layer.
-   > - (c) **Skip this layer entirely.** Rare; usually flags a structural issue with the canvas (wrong ICP, wrong stage).
+   > - (c) **Skip this layer entirely.** Rare; usually flags a structural issue with the canvas (wrong product scope, wrong stage).
 2. **Ask the layer's grounding question** (from the rubric).
 3. **If transcripts were ingested in Step 3, surface 2–3 relevant quotes** from `concatenated_text` for this layer ("Here's how your customers describe [pain]: [quote 1, source]; [quote 2, source]").
 4. **Ask the user to craft the cell in their own words.** Suggest quotes only — do NOT draft cells for the user.
@@ -176,7 +174,7 @@ Generate a structured research plan + interview question packs the user can run 
 
 ### Step 2 — Context Check
 
-Same two questions as Mode B (company + product, target ICP). One ICP per research plan.
+Same one question as Mode B (company + product). Personas are captured per-pain in the Inputs Audit below.
 
 ### Step 3 — Inputs Audit (per layer)
 
@@ -220,7 +218,7 @@ For each layer with ⚠️ or ❌ status:
 For each research type referenced in Section 2, produce a pack of 5–7 question stems. Format each stem with a one-line "why-asked" so the PMM understands the intent:
 
 ```
-### Customer call — [Target ICP]
+### Customer call — [per-pain persona]
 1. [Question stem] — why-asked: [one line]
 2. [Question stem] — why-asked: [one line]
 ...
@@ -278,18 +276,18 @@ Each layer: **Job / Grounding question / Common mistake / Pressure-test question
 
 **Job.** Three customer pains the company is uniquely qualified to solve. Mutually exclusive. First is dominant.
 
-**Grounding question.** Restate ICP from Step 2: *"Writing pains for [ICP]. Three pains for one ICP, mutually exclusive. If you find yourself wanting pains for a different ICP, stop me — we'll run a separate canvas. Pain language doesn't generalize across ICPs and that's the most common reason canvases break."*
+**Grounding question.** *"For each pain, who specifically feels it? Title, company size, vertical. Different pains can target different personas — that's normal for products serving multiple buyers (a CISO feels Pain 1, an IT/IAM lead feels Pain 2, a Compliance/GRC lead feels Pain 3). Capture the persona per pain so the rest of the column lands right. What stays consistent across the canvas: the PRODUCT being positioned, not the buyer."*
 
-**Common mistake.** Three pains that collapse into the same root pain ("data is messy" / "hard to find" / "hard to govern" — same pain three ways).
+**Common mistake.** Three pains that collapse into the same root pain ("data is messy" / "hard to find" / "hard to govern" — same pain three ways). Or three pains that are actually about three different products dressed as pains for one canvas.
 
 **Pressure-test questions.**
-1. Could a customer experience Pain 1 without Pain 2? If no, merge or re-cut.
-2. Which is dominant? If you can't pick one, the cut isn't right.
+1. Could a target ACCOUNT experience Pain 1 without Pain 2 (even if different personas inside that account feel them)? If no — the pains always co-occur in the same buyer's life — merge or re-cut.
+2. Which pain is dominant? If you can't pick one, the cut isn't right yet.
 3. Customer-language, or department names? "Access governance" is internal; "auditors are flagging our access controls" is what a customer says.
-4. If ranked across three target accounts in your ICP, would rank order be consistent? If no, you may have three pains for three sub-segments — re-cut or split the canvas.
-5. Do these map to real budget? Pain without budget is a wishlist.
+4. Do the three pains hold together as a single PRODUCT'S story across a target account? If a buyer in that account would say "those are three different products," the pains aren't right for this canvas — you may have a portfolio canvas trying to live as one product canvas.
+5. Per pain, does it map to real budget in that persona's org? Pain without budget for that persona is a wishlist.
 
-**Readiness criterion.** Customer-voiced pain language for the target ICP — from interviews, win-loss calls, or recurring sales objection logs. At least 3 quotes per pain candidate.
+**Readiness criterion.** Customer-voiced pain language for the relevant persona per pain — at least 3 quotes per pain candidate, from interviews / win-loss calls / sales objection logs with that specific persona.
 
 ### Differentiation
 

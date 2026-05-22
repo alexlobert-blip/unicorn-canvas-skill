@@ -20,9 +20,11 @@ The three modes cover the full PMM project lifecycle — learn the framework, pl
 
 ```bash
 curl -L -o sharebird-unicorn-canvas.zip \
-  https://github.com/alexlobert-blip/unicorn-canvas-skill/releases/latest/download/sharebird-unicorn-canvas-v0.4.0.zip
+  https://github.com/alexlobert-blip/unicorn-canvas-skill/releases/latest/download/sharebird-unicorn-canvas-v0.4.1.zip
 unzip sharebird-unicorn-canvas.zip -d ~/sharebird-unicorn-canvas
 ```
+
+(For a release-pinned URL or future versions, browse https://github.com/alexlobert-blip/unicorn-canvas-skill/releases and grab the `.zip` asset directly.)
 
 Then add the skill through your Claude client — Claude.app: Customize → Skills → `+` → point at the unzipped `skills/sharebird-unicorn-canvas/` directory.
 

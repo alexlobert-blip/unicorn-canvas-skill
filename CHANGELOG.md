@@ -2,6 +2,28 @@
 
 All notable changes to this plugin will be documented here.
 
+## [0.4.1] - 2026-05-21
+
+### Fixed
+- **Step 2 no longer asks for a canvas-level "target ICP."** The previous *"one ICP per canvas, multiple ICPs = separate canvases"* rule contradicted how the framework actually works — the bundled Cyera worked example targets three different buyer personas across the three pain columns (CISO for Pain 1, IT/IAM lead for Pain 2, Compliance/GRC lead for Pain 3). The skill was telling users to split that canvas into three when the framework treats it as one.
+- **Pains layer grounding question rewritten.** Was: *"Writing pains for [ICP from Step 2], three pains for ONE ICP."* Now: *"For each pain, who specifically feels it? Different pains can target different personas — that's normal. What stays consistent across the canvas: the PRODUCT being positioned, not the buyer."*
+- **Pains pressure-tests updated** to evaluate cross-pain consistency at the ACCOUNT level (not the persona level) and budget at the per-pain persona level.
+- **Pains Readiness criterion updated** to require evidence per pain's persona, not for one canvas-wide ICP.
+- **Mode C Step 2 dropped the ICP question** to match Mode B. Personas surface per-pain in the Inputs Audit.
+- **Mode C question pack header** changed from `Customer call — [Target ICP]` to `Customer call — [per-pain persona]`.
+
+### Changed
+- **Step 2 (Context Check) now asks one question:** company + product. The brand-line pressure-test already enforces multi-persona durability; the Pains layer captures personas per pain.
+
+### Preserved
+- All 6 grounding questions and 5 pressure-tests per layer (the rubric structure is unchanged in shape; one Pains pressure-test was rewritten to account for multi-persona canvases).
+- All `[VALIDATE]` / `[BETA]` / `[ROADMAP]` / `[NEW MOTION]` markers.
+- Mode A, Mode B output flow, Mode C output flow — all unchanged.
+- Power plays layer was already per-pain ICP — no change needed there.
+
+### Why this matters
+This is the same shape of fix as v0.2.2's "calibrate language register" correction — an over-constraint that fought the framework. Caught by user pushback: *"Do we actually need to ask ICP up front in the AI Skill? The power plays be to multiple ICPs / types of customers, right?"* Correct.
+
 ## [0.4.0] - 2026-05-21
 
 ### Added — three enterprise-grade modes
