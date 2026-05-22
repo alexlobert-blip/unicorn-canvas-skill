@@ -2,6 +2,14 @@
 
 All notable changes to this plugin will be documented here.
 
+## [0.2.2] - 2026-05-21
+
+### Fixed
+- **Step 2 — Context Check no longer asks "where does this live downstream" and no longer "calibrates language register" to the surface.** This contradicted the framework: per Chris Hines's playbook, the canvas is ONE source of truth that must be surface-durable. The brand-line pressure-test already enforces this — *"Works at a sales kickoff AND on a website hero? If only one, too narrow."* — and adding a "tune the canvas for exec vs. sales vs. web" instruction in Step 2 was incompatible with that pressure-test. Step 2 now asks just two things: company + product, and target ICP.
+
+### Changed
+- **Surface translation moved to Output Step 6 as a recommended-next-action.** Translating the canvas into specific deliverables (exec memo, sales kickoff deck, website hero rewrite, board update) is downstream copywriting work — not changes to the canvas itself. One of the three recommended next actions at Output time is now always a surface-translation prompt.
+
 ## [0.2.1] - 2026-05-21
 
 ### Changed

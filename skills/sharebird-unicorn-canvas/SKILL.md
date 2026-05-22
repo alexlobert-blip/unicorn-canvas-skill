@@ -21,16 +21,15 @@ Blank → Step 2. Critique → Step 5.
 
 ## Step 2 — Context Check
 
-Ask three things in one turn, terse answers fine:
+Ask two things in one turn, terse answers fine:
 
-> Before we start, three quick things:
+> Before we start, two quick things:
 > 1. **Company + product** in one line.
 > 2. **Target ICP** for this canvas — title, company size, vertical if relevant.
-> 3. **Where this lives downstream** — exec align, sales enablement, website hero, board memo, all of the above?
 >
 > One ICP per canvas. Multiple ICPs = separate canvases; pain language doesn't generalize.
 
-Calibrate language register to the downstream surface (exec → strategic; sales → proof-heavy; web → customer-voice).
+The canvas is one source of truth — write it once, in neutral surface-durable language (the brand-line pressure-test enforces this: "works at a sales kickoff AND on a website hero"). Different downstream surfaces (exec memo, sales deck, website hero) are translations FROM the canvas, handled in Output Step 6's recommended-next-actions — not different versions OF the canvas.
 
 ## Step 3 — Inputs Check
 
@@ -105,7 +104,7 @@ Then generate the Markdown critique in the conversation:
 
 - **Strongest two cells.** Name them and say why.
 - **Weakest two cells.** Name them and recommend a concrete rewrite.
-- **Three recommended next actions.** Concrete, testable. **If Step 3 flagged thin/no inputs, OR any Outcome was marked `[VALIDATE]`, OR any Module was marked `[BETA]` / `[ROADMAP]`, the first recommended action must be the matching validation task** (customer interviews, outcome confirmation, module-availability check).
+- **Three recommended next actions.** Concrete, testable. **If Step 3 flagged thin/no inputs, OR any Outcome was marked `[VALIDATE]`, OR any Module was marked `[BETA]` / `[ROADMAP]`, the first recommended action must be the matching validation task** (customer interviews, outcome confirmation, module-availability check). One of the three actions should always be **surface translation** — once the canvas is locked, translate it into the specific deliverables it feeds (exec memo, sales kickoff deck, website hero rewrite, board update). The canvas is source-of-truth; each surface is a downstream copywriting pass that pulls from it.
 - **Handoff teaser:** *"The three Power Play rows are ready to operationalize — each one expands into a row in the Power Play Table. A future `sharebird-power-play-table` skill will pick this up; until then, the XLSX template is bundled with this plugin at `templates/canvas-blank.xlsx` (or downloadable from the GitHub release)."*
 
 ---
