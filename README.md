@@ -72,6 +72,19 @@ unicorn-canvas-skill/
 
 - Python 3 with `openpyxl` (only used to write the populated XLSX). Install with `pip install openpyxl`.
 
+## Scope (v1)
+
+What's in:
+- Blank-canvas and critique workflows for the Unicorn Messaging Framework canvas.
+- Per-layer pressure-test rubric covering the brand line, three pains, differentiation, outcomes, modules, and power plays.
+- XLSX output via bundled `templates/canvas-blank.xlsx` + `scripts/fill_canvas.py`.
+
+What's out of v1 (could land in future versions):
+- HTML output (XLSX only).
+- Automatic ingestion of customer transcripts or prep docs as upstream input.
+- Per-industry rubric variants. v1 is industry-neutral with cybersecurity-flavored examples drawn from the Cyera worked example that originated the framework — substitute your own buyer / opponent / SKUs as you walk the layers.
+- Power Play Table integration beyond the closing handoff line in the skill (a separate `sharebird-power-play-table` skill is planned).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

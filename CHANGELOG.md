@@ -2,6 +2,21 @@
 
 All notable changes to this plugin will be documented here.
 
+## [0.2.1] - 2026-05-21
+
+### Changed
+- **Subtraction pass on `SKILL.md`** — 286 lines → 205 lines (~28% reduction). Removed pure documentation (`What stays out of v1`, `Optional bundled files`, `Two non-negotiables` preamble, `Everything you need is inline` paragraph), compressed Overview from 6 paragraphs to 2, collapsed Path A/B output instructions into one paragraph, tightened each rubric layer's prose (grounding questions kept verbatim, pressure-test wording compressed without cutting questions). All 6 grounding questions, all 5 pressure-tests per layer, and all `[VALIDATE]` / `[BETA]` / `[ROADMAP]` / `[NEW MOTION]` markers preserved.
+
+### Fixed
+- **Portability:** Dropped cross-reference to `narrative-pressure-test` skill in the Overview. The instruction *"match `narrative-pressure-test`'s tone"* would silently fail for users who install this plugin standalone without the rest of Sharebird's skill ecosystem. Tone is now self-described: *"direct, specific, never preachy. Push back, never block."*
+- **Portability:** Replaced vague *"Sharebird playbook page"* reference in the handoff line with concrete pointer to the bundled `templates/canvas-blank.xlsx` and the GitHub release URL.
+- **Portability:** Annotated `output_path` resolution to explicitly call out cross-platform support (macOS / Linux / Windows via `Path.expanduser()`).
+
+### Not changed
+- Behavior — the skill produces the same flow, same XLSX, same Markdown critique. Pure density + portability pass.
+- Trigger surface — frontmatter `description` is untouched.
+- `references/rubric.md`, `scripts/fill_canvas.py`, `templates/canvas-blank.xlsx` — all unchanged.
+
 ## [0.2.0] - 2026-05-21
 
 ### Added
